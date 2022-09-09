@@ -25,6 +25,9 @@ function giveMessage() {
     paragraph.innerHTML = `
     <p>${message}</p>`
   }
+   if (!mantra.checked && !affirmation.checked) {
+    alert("Please pick a message type!");
+  }
 }
 
 function clearMessage() {
