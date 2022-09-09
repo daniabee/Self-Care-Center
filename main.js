@@ -9,6 +9,8 @@ var paragraph = document.querySelector('#paragraph');
 var allMessagesButton = document.querySelector('#all-messages');
 var mainPage = document.querySelector('#main-page-view');
 var messageListView = document.querySelector('#message-view');
+var affirmationsListTitle = document.querySelector('#affirmations-list');
+var mantrasListTitle = document.querySelector('#mantras-list');
 
 recieveMessageButton.addEventListener('click',giveMessage);
 clearMessageButton.addEventListener('click', clearMessage);
@@ -44,9 +46,24 @@ function clearMessage() {
 function changePage() {
   mainPage.classList.add('hidden');
   messageListView.classList.remove('hidden');
+  addMantrasList();
+  addAffirmationsList();
 }
-
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
+}
+
+function addAffirmationsList() {
+  for (var i = 0; i < affirmationsList.length; i++) {
+    affirmationsListTitle.innerHTML += `<li> ${affirmationsList[i]} </li>`
+    console.log('affirmations', affirmationsList[i])
+  }
+}
+
+function addMantrasList() {
+  for (var i = 0; i < mantrasList.length; i++) {
+    mantrasListTitle.innerHTML += `<li> ${mantrasList[i]}</li>`
+    console.log('mantras', mantrasList[i]);
+  }
 }
