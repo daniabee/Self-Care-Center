@@ -90,6 +90,19 @@ label {
   width: 75px;
 }
 
+.fade {
+  animation: fade 5s;
+}
+
+  @keyframes fade {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+
 p {
   padding: 10px;
   text-align: center;

@@ -33,7 +33,8 @@ function giveMessage() {
 function clearMessage() {
   if (meditationImage.classList.contains('hidden')) {
     meditationContainer.innerHTML = `
-    <img id= "svg" src = "meditate.svg" alt="My Happy SVG"/>`;
+    <img class = "fade" id= "svg" src = "meditate.svg" alt="My Happy SVG"/>`;
+    meditationImage.classList.remove('hidden');
   }
 }
 
