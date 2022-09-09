@@ -5,28 +5,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <title> Self Care Page </title>
   </head>
-  <body>
-    <div class= "page">
-      <h1 id= "self-care-center"> ✨ Self Care Center ✨ </h1>
-      <h3 id= "which-type-of-message"> Which type of message? </h3>
-      <section>
-        <div class= "radio-buttons-container">
-          <div class = "inputs">
-            <input type="radio" id="affirmation" name="message-type" value="affirmation">
-            <label for="affirmation">affirmation</label>
-            <input type="radio" id="mantra" name="message-type" value="mantra">
-            <label for="mantra">mantra</label>
+  <section id = "message-view" class = "hidden">
+    <body>
+      <h1> All Messages </h1>
+        <ul> whatever <ul>;
+      <h2> Affirmations </h2>
+      <h2> Mantras </h2>
+        <ul> whatever </ul>
+    </body>
+  </section>
+  <section id="main-page-view">
+    <body>
+      <div class= "page">
+        <h1 id= "self-care-center"> ✨ Self Care Center ✨ </h1>
+        <h3 id= "which-type-of-message"> Which type of message? </h3>
+        <section>
+          <div class= "radio-buttons-container">
+            <div class = "inputs">
+              <input type="radio" id="affirmation" name="message-type" value="affirmation">
+              <label for="affirmation">affirmation</label>
+              <input type="radio" id="mantra" name="message-type" value="mantra">
+              <label for="mantra">mantra</label>
+            </div>
+            <button id = "recieve-message-button"> Recieve Message </button>
           </div>
-          <button id = "recieve-message-button"> Recieve Message </button>
+        </section>
+        <div id= "meditate-container">
+          <img id= "svg" src = "meditate.svg" alt="My Happy SVG"/>
         </div>
-      </section>
-      <div id= "meditate-container">
-        <img id= "svg" src = "meditate.svg" alt="My Happy SVG"/>
-      </div>
-      <button id= "all-messages"> View All Messages </button>
-      <button id= "clear-button"> Clear Message </button>
-    <script type="text/javascript" src="main.js"></script>
-    <script type="text/javascript" src="data.js"></script>
-  </div>
-  </body>
+        <button id= "all-messages"> View All Messages </button>
+        <button id= "clear-button"> Clear Message </button>
+      <script type="text/javascript" src="main.js"></script>
+      <script type="text/javascript" src="data.js"></script>
+    </div>
+    </body>
+  </section>
 </html>

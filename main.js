@@ -6,10 +6,13 @@ var meditationContainer = document.querySelector('#meditate-container');
 var clearMessageButton = document.querySelector('#clear-button');
 var message = ''
 var paragraph = document.querySelector('#paragraph');
+var allMessagesButton = document.querySelector('#all-messages');
+var mainPage = document.querySelector('#main-page-view');
+var messageListView = document.querySelector('#message-view');
 
 recieveMessageButton.addEventListener('click',giveMessage);
 clearMessageButton.addEventListener('click', clearMessage);
-
+allMessagesButton.addEventListener('click', changePage);
 
 
 function giveMessage() {
@@ -36,6 +39,11 @@ function clearMessage() {
     <img class = "fade" id= "svg" src = "meditate.svg" alt="My Happy SVG"/>`;
     meditationImage.classList.remove('hidden');
   }
+}
+
+function changePage() {
+  mainPage.classList.add('hidden');
+  messageListView.classList.remove('hidden');
 }
 
 
