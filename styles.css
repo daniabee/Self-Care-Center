@@ -31,6 +31,7 @@ body {
 #self-care-center {
   margin-top: 10px;
   margin-bottom: 60px;
+  margin-left: 15px;
 }
 
 #which-type-of-message {
@@ -88,12 +89,48 @@ label {
   align-items: center;
 }
 
-.hidden {
-  display: none;
+#paragraph {
+  /* padding-right: 50px; */
+  color:black;
+  font-size: 18pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 p {
-  margin: 10px;
-  color:black;
-  font-size: 18pt;
+  margin: 0;
+  padding: 0;
+  display: inline-grid;
+}
+
+#clear-button {
+  background-color: #134d71;
+  border: none;
+  height: 25px;
+  width: 150px;
+  border-radius: 2pt;
+  color: white;
+  margin-top: 10px;
+}
+
+#svg-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  /* display: none; */
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display {
+  visibility: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
