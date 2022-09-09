@@ -38,10 +38,6 @@ body {
   margin-bottom: 10px;
 }
 
-section {
-  margin-top: 10px;
-}
-
 .radio-buttons-container {
   font-style: italic;
   color: black;
@@ -89,20 +85,29 @@ label {
   align-items: center;
 }
 
-#paragraph {
-  /* padding-right: 50px; */
-  color:black;
+#svg {
+  hight: 75px;
+  width: 75px;
+}
+
+p {
+  padding: 10px;
+  text-align: center;
   font-size: 18pt;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: pulse 5s infinite;
 }
 
-p {
-  margin: 0;
-  padding: 0;
-  display: inline-grid;
-}
+  @keyframes pulse {
+    0% {
+      color: white;
+    }
+    100% {
+      color: black;
+    }
+  }
 
 #clear-button {
   background-color: #134d71;
@@ -114,23 +119,7 @@ p {
   margin-top: 10px;
 }
 
-#svg-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .hidden {
   /* display: none; */
   visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.display {
-  visibility: visible;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
