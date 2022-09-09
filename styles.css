@@ -46,6 +46,7 @@ body {
   height: 100px;
   width: 500px;
   display: inline-block;
+  margin-bottom: 90px;
 }
 
 .inputs {
@@ -63,13 +64,16 @@ label {
   font-size: 12pt;
 }
 
-#recieve-message-button {
+button {
   background-color: #134d71;
   border: none;
   height: 25px;
   width: 150px;
   border-radius: 2pt;
   color: white;
+}
+
+#recieve-message-button {
   margin-top: 10px;
   margin-left: 175px;
 }
@@ -77,7 +81,7 @@ label {
 #meditate-container {
   background-color: white;
   border-radius: 6pt;
-  margin-top: 100px;
+  margin-top: 10px;
   height: 150px;
   width: 800px;
   display: flex;
@@ -110,7 +114,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: pulse 5s infinite;
+  color:black;
+  animation: pulse 5s;
 }
 
   @keyframes pulse {
@@ -123,12 +128,6 @@ p {
   }
 
 #clear-button {
-  background-color: #134d71;
-  border: none;
-  height: 25px;
-  width: 150px;
-  border-radius: 2pt;
-  color: white;
   margin-top: 10px;
 }
 
