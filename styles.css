@@ -1,12 +1,3 @@
-/* font-family: 'Quicksand', sans-serif;
-COLORS
-light-yellow - #f7e4bf;
-light-blue - #78a7c6;
-dark-blue - #134d71;
-white - #ffffff;
-black - #000000;
-*/
-
 html {
     height: 100%;
     background-size: cover;
@@ -28,10 +19,25 @@ body {
   margin-bottom: 0;
 }
 
+.message-page {
+  display:flex;
+  margin: 20px;
+}
+
+#all-messages-title {
+  margin-left: 5%;
+}
+
 #self-care-center {
   margin-top: 10px;
   margin-bottom: 60px;
   margin-left: 15px;
+}
+
+#selftalk {
+  font-size: 50pt;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 #which-type-of-message {
@@ -49,6 +55,12 @@ body {
   margin-bottom: 90px;
 }
 
+#user-options {
+  width: 300px;
+  hight: 50px;
+
+}
+
 .inputs {
   display: flex;
   justify-content: space-between;
@@ -60,7 +72,7 @@ body {
 }
 
 label {
-  margin-left: -125px;
+  margin-left: -120px;
   font-size: 12pt;
 }
 
@@ -90,9 +102,31 @@ button {
   align-items: center;
 }
 
+#input-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #svg {
   hight: 75px;
   width: 75px;
+}
+
+.list {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+ul {
+  font-style: italic;
+  margin-top: 1px;
+}
+
+li {
+  font-style:normal;
 }
 
 .fade {
@@ -130,6 +164,20 @@ p {
 
 #clear-button {
   margin-top: 10px;
+}
+
+#yourMessage {
+  margin-top: 15%;
+}
+
+#user-input {
+  height: 25px;
+  width: 300px;
+  margin-top:
+}
+
+#home-button {
+  margin-top: 100%;
 }
 
 .hidden {

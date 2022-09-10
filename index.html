@@ -7,9 +7,30 @@
   </head>
   <section id= "message-view" class = "hidden">
     <body>
-      <h1 id= "all-messages-title" > All Messages </h1>
-        <ul id= "affirmations-list"> Affirmations </ul>
-        <ul id= "mantras-list"> Mantras </ul>
+    <div class= "message-page">
+      <div id = "input-section">
+        <h2 id= "selftalk"> How's your self talk today? </h2>
+        <button id= "yourMessage"> Add Your Message </button>
+        <div id = "user-options" class= "inputs">
+          <input type="radio" id="affirmation2" name="message-type" value="affirmation">
+          <label for="affirmation2">affirmation</label>
+          <input type="radio" id="mantra2" name="message-type" value="mantra">
+          <label for="mantra2">mantra</label>
+        </div>
+        <input id= "user-input" type="text"> Write your own message here! </input>
+        <div>
+          <button id= "home-button"> Home </button>
+        </div>
+      </div>
+      <div class = "list">
+        <h3> Affirmations: </h3>
+        <ul id= "affirmations-list"> Affirmations : </ul>
+      </div>
+      <div class= "list">
+      <h3> Mantras: </h3>
+      <ul id= "mantras-list"> Mantras : </ul>
+      </div>
+    </div>
     </body>
   </section>
   <section id="main-page-view">
