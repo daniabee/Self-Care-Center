@@ -8,6 +8,7 @@ var clearMessageButton = document.querySelector('#clear-button');
 var allMessagesButton = document.querySelector('#all-messages');
 var createMessageButton = document.querySelector('#yourMessage');
 var homeButton = document.querySelector('#home-button');
+var removeMessageButton = document.querySelector('#removeMessage');
 
 //main page container and logo
 var meditationImage = document.querySelector('#svg');
@@ -18,6 +19,8 @@ var affirmationsListTitle = document.querySelector('#affirmations-list');
 var mantrasListTitle = document.querySelector('#mantras-list');
 
 //user message input
+var affirmationChecked2 = document.getElementById('affirmation2');
+var mantraChecked2 = document.getElementById('mantra2');
 var userMessage = document.querySelector('#user-input');
 
 
@@ -27,7 +30,8 @@ clearMessageButton.addEventListener('click', clearMessage);
 allMessagesButton.addEventListener('click', changePage);
 createMessageButton.addEventListener('click', addYourMessage);
 homeButton.addEventListener('click', returnHome);
-
+removeMessageButton.addEventListener('click',removeSpecificMessage);
+removeMessageButton.addEventListener('dblclick', removeLastMessage);
 
 //functions
 function makeHidden(hide) {
@@ -96,8 +100,6 @@ function addMantrasList() {
 }
 
 function addYourMessage() {
-  var affirmationChecked2 = document.getElementById('affirmation2');
-  var mantraChecked2 = document.getElementById('mantra2');
 
   if (affirmationChecked2.checked && userMessage.value != '') {
     affirmationsList.push(userMessage.value);
@@ -128,16 +130,33 @@ function returnHome() {
   fade(mainPage);
 }
 
-function removeMessage(event) {
-  var messageItem = event.target.parentElement;
-
-  for (var i = 0; i < mantrasList.length; i++) {
-    if (messageItem === mantrasListTitle[i]) {
-      mantrasList.splice(i,1);
-    }
-    if (messageItem === affirmationsListTitle[i]) {
+function removeSpecificMessage() {
+  for (var i = 0; i < affirmationsList.length; i++) {
+    if (userMessage.value === affirmationsList[i] ){
       affirmationsList.splice(i,1);
     }
+  }
+  for (var i = 0; i < mantrasList.length; i++) {
+    if (userMessage.value === mantrasList[i]) {
+      mantrasList.splice(i,1);
+    }
+  }
+  mantrasListTitle.innerHTML = '';
+  affirmationsListTitle.innerHTML = '';
+  addMantrasList();
+  addAffirmationsList();
+  userMessage.value = '';
+}
+
+function removeLastMessage() {
+  if (affirmationChecked2.checked) {
+    affirmationsList.splice(affirmationsList.length-1, 1);
+  }
+  if (mantraChecked2.checked) {
+    mantrasList.splice(mantrasList.length-1, 1);
+  }
+  if (!mantraChecked2.checked && !affirmationChecked2.checked) {
+    alert("Please choose which list you would like a message removed from!")
   }
   mantrasListTitle.innerHTML = '';
   affirmationsListTitle.innerHTML = '';

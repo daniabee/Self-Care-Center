@@ -10,24 +10,26 @@
     <div class= "message-page">
       <div id = "input-section">
         <h2 id= "selftalk"> How's your self talk today? </h2>
-        <button id= "yourMessage"> Add Your Message </button>
+        <button id= "home-button"> Home Page </button>
         <div id = "user-options" class= "inputs">
           <input type="radio" id="affirmation2" name="message-type" value="affirmation">
           <label for="affirmation2">affirmation</label>
           <input type="radio" id="mantra2" name="message-type" value="mantra">
           <label for="mantra2">mantra</label>
         </div>
-        <input id= "user-input" type="text"> Write your message! </input>
+        <input id= "user-input" type="text"> Write a message! </input>
         <div>
-          <button id= "home-button"> Home </button>
+          <button id= "yourMessage"> Add Your Message </button>
+          <button id= "removeMessage"> Remove Message </button>
         </div>
+        <p id= "instructions"> Click 'Add Your Message' to add a message to the Affirmations or Mantras List! Copy and past messages you want removed and hit the 'Remove Message' button or double click to remove the last message in the selected list! </p>
       </div>
       <div class = "list">
-        <h3> Affirmations: </h3>
+        <h3 class= "list-titles"> Affirmations: </h3>
         <ol id= "affirmations-list"> Affirmations : </ul>
       </div>
       <div class= "list">
-      <h3> Mantras: </h3>
+      <h3 class= "list-titles"> Mantras: </h3>
       <ol id= "mantras-list"> Mantras : </ul>
       </div>
     </div>
@@ -52,8 +54,10 @@
         <div id= "meditate-container">
           <img id= "svg" src = "meditate.svg" alt="My Happy SVG"/>
         </div>
-        <button id= "all-messages"> View All Messages </button>
-        <button id= "clear-button"> Clear Message </button>
+        <div>
+          <button id= "all-messages"> View Messages Page </button>
+          <button id= "clear-button"> Clear Message </button>
+        </div>
       <script type="text/javascript" src="main.js"></script>
       <script type="text/javascript" src="data.js"></script>
     </div>

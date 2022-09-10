@@ -21,7 +21,8 @@ body {
 
 .message-page {
   display:flex;
-  margin: 20px;
+  margin-right: 5%;
+  margin-bottom: 10%;
 }
 
 #self-care-center {
@@ -114,6 +115,10 @@ button {
   width: 75px;
 }
 
+.list-titles {
+  margin-bottom: 0px;
+}
+
 .list {
   display:flex;
   flex-direction: column;
@@ -154,6 +159,11 @@ p {
   animation: pulse 4s;
 }
 
+#instructions {
+  font-size: 12pt;
+  margin: 50px;
+}
+
   @keyframes pulse {
     0% {
       color: white;
@@ -174,11 +184,11 @@ p {
 #user-input {
   height: 25px;
   width: 300px;
-  margin-top:
 }
 
 #home-button {
-  margin-top: 100%;
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 
 .hidden {
