@@ -130,7 +130,7 @@ li {
 }
 
 .fade {
-  animation: fade 5s;
+  animation: fade 4s;
 }
 
   @keyframes fade {
@@ -150,7 +150,7 @@ p {
   justify-content: center;
   align-items: center;
   color:black;
-  animation: pulse 5s;
+  animation: pulse 4s;
 }
 
   @keyframes pulse {
@@ -182,5 +182,4 @@ p {
 
 .hidden {
   display: none;
-  /* visibility: hidden; */
 }
