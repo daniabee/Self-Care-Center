@@ -24,15 +24,16 @@ body {
   margin: 20px;
 }
 
-#all-messages-title {
-  margin-left: 5%;
-}
-
 #self-care-center {
   margin-top: 10px;
   margin-bottom: 60px;
   margin-left: 15px;
 }
+
+#all-messages-title {
+  margin-left: 5%;
+}
+
 
 #selftalk {
   font-size: 50pt;

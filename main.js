@@ -22,12 +22,12 @@ var userMessage = document.querySelector('#user-input');
 
 
 //Event listeners
-
 recieveMessageButton.addEventListener('click', giveMessage);
 clearMessageButton.addEventListener('click', clearMessage);
 allMessagesButton.addEventListener('click', changePage);
 createMessageButton.addEventListener('click', addYourMessage);
 homeButton.addEventListener('click', returnHome);
+
 
 //functions
 function makeHidden(hide) {
@@ -126,6 +126,23 @@ function returnHome() {
   makeVisible(mainPage);
   makeHidden(messageListView);
   fade(mainPage);
+}
+
+function removeMessage(event) {
+  var messageItem = event.target.parentElement;
+
+  for (var i = 0; i < mantrasList.length; i++) {
+    if (messageItem === mantrasListTitle[i]) {
+      mantrasList.splice(i,1);
+    }
+    if (messageItem === affirmationsListTitle[i]) {
+      affirmationsList.splice(i,1);
+    }
+  }
+  mantrasListTitle.innerHTML = '';
+  affirmationsListTitle.innerHTML = '';
+  addMantrasList();
+  addAffirmationsList();
 }
 
 function getRandomIndex(array) {
