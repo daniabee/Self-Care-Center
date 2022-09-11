@@ -63,6 +63,13 @@ body {
 
 }
 
+.inputs-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .inputs {
   display: flex;
   justify-content: space-between;
@@ -71,6 +78,7 @@ body {
   margin-left: 75px;
   margin-right: 75px;
   margin-top: 25px;
+  font-style: italic;
 }
 
 label {
@@ -181,9 +189,28 @@ p {
   margin-top: 15%;
 }
 
-#user-input {
-  height: 25px;
-  width: 300px;
+#user-input1 {
+  height: 80px;
+  width: 720px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 18pt;
+  text-align: center;
+}
+
+#user-input2 {
+  height: 40px;
+  width: 450px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 12pt;
+  text-align: center;
+  border-radius: 4pt;
+}
+
+.inputs-main {
+  display: flex;
+  flex-direction: column;
 }
 
 #home-button {

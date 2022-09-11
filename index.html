@@ -17,12 +17,11 @@
           <input type="radio" id="mantra2" name="message-type" value="mantra">
           <label for="mantra2">mantra</label>
         </div>
-        <input id= "user-input" type="text"> Write a message! </input>
+        <input id= "user-input2" type="text"></input>
         <div>
-          <button id= "yourMessage"> Add Your Message </button>
           <button id= "removeMessage"> Remove Message </button>
         </div>
-        <p id= "instructions"> Click 'Add Your Message' to add a message to the Affirmations or Mantras List! Copy and past messages you want removed and hit the 'Remove Message' button or double click to remove the last message in the selected list! </p>
+        <p id= "instructions"> Copy and past messages you want removed and hit the 'Remove Message' button or double click it to remove the last message on the selected list! </p>
       </div>
       <div class = "list">
         <h3 class= "list-titles"> Affirmations: </h3>
@@ -52,10 +51,16 @@
           </div>
         </section>
         <div id= "meditate-container">
-          <img id= "svg" src = "meditate.svg" alt="My Happy SVG"/>
+          <p class= "hidden" id="message"> </p>
+          <img class = "fade" id= "svg" src = "meditate.svg" alt="My Happy SVG"/>
+          <div class = "inputs-main fade hidden">
+            <input id= "user-input1" type="text"></input>
+            <button id= "submit"> Submit </button>
+          </div>
         </div>
         <div>
-          <button id= "all-messages"> View Messages Page </button>
+          <button id= "all-messages"> View All Messages </button>
+          <button id="add-message-here"> Add Message </button>
           <button id= "clear-button"> Clear Message </button>
         </div>
       <script type="text/javascript" src="main.js"></script>

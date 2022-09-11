@@ -1,6 +1,7 @@
 //Page views
 var mainPage = document.querySelector('#main-page-view');
 var messageListView = document.querySelector('#message-view');
+var messageForm = document.querySelector('.inputs-main');
 
 //Buttons
 var recieveMessageButton = document.querySelector('#recieve-message-button');
@@ -9,29 +10,37 @@ var allMessagesButton = document.querySelector('#all-messages');
 var createMessageButton = document.querySelector('#yourMessage');
 var homeButton = document.querySelector('#home-button');
 var removeMessageButton = document.querySelector('#removeMessage');
+var addMessageMainPageButton = document.querySelector('#add-message-here');
+var submitButton = document.querySelector('#submit');
 
 //main page container and logo
 var meditationImage = document.querySelector('#svg');
 var meditationContainer = document.querySelector('#meditate-container');
+var messageParagraph = document.querySelector('#message');
 
 //affirmation and mantra lists
 var affirmationsListTitle = document.querySelector('#affirmations-list');
 var mantrasListTitle = document.querySelector('#mantras-list');
+var message = ''
+var affirmationChecked = document.getElementById('affirmation');
+var mantraChecked = document.getElementById('mantra');
 
 //user message input
 var affirmationChecked2 = document.getElementById('affirmation2');
 var mantraChecked2 = document.getElementById('mantra2');
-var userMessage = document.querySelector('#user-input');
+var userMessage = document.querySelector('#user-input1');
+var messageToRemove = document.querySelector('#user-input2');
 
 
 //Event listeners
-recieveMessageButton.addEventListener('click', giveMessage);
+recieveMessageButton.addEventListener('click', giveRandomMessage);
 clearMessageButton.addEventListener('click', clearMessage);
 allMessagesButton.addEventListener('click', changePage);
-createMessageButton.addEventListener('click', addYourMessage);
 homeButton.addEventListener('click', returnHome);
 removeMessageButton.addEventListener('click',removeSpecificMessage);
 removeMessageButton.addEventListener('dblclick', removeLastMessage);
+addMessageMainPageButton.addEventListener('click', seeMessageForm);
+submitButton.addEventListener('click', addYourMessage);
 
 //functions
 function makeHidden(hide) {
@@ -46,43 +55,9 @@ function fade(fadeElement) {
   fadeElement.classList.add('fade');
 }
 
-function giveMessage() {
-  var message = ''
-  var affirmationChecked = document.getElementById('affirmation');
-  var mantraChecked = document.getElementById('mantra');
-
-  if (mantra.checked) {
-    message = mantrasList[getRandomIndex(mantrasList)];
-    makeHidden(meditationImage);
-    meditationContainer.innerHTML = `
-    <p>${message}</p>`
-  }
-  if (affirmation.checked) {
-    message = affirmationsList[getRandomIndex(affirmationsList)];
-    makeHidden(meditationImage);
-    meditationContainer.innerHTML = `
-    <p>${message}</p>`
-  }
-   if (!mantra.checked && !affirmation.checked) {
-    alert("Please pick a message type!");
-  }
-}
-
-function clearMessage() {
-  if (meditationImage.classList.contains('hidden')) {
-    meditationContainer.innerHTML = `
-    <img class = "fade" id= "svg" src = "meditate.svg" alt="My Happy SVG"/>`;
-    makeVisible(meditationImage);
-  }
-}
-
-function changePage() {
+function resetPage()  {
   mantrasListTitle.innerHTML = '';
   affirmationsListTitle.innerHTML = '';
-
-  makeHidden(mainPage);
-  makeVisible(messageListView);
-  fade(messageListView);
   addMantrasList();
   addAffirmationsList();
 }
@@ -99,23 +74,62 @@ function addMantrasList() {
   }
 }
 
-function addYourMessage() {
+function changePage() {
+  resetPage();
+  makeHidden(mainPage);
+  makeVisible(messageListView);
+  fade(messageListView);
+}
 
-  if (affirmationChecked2.checked && userMessage.value != '') {
+function giveRandomMessage() {
+  if (mantraChecked.checked) {
+    message = mantrasList[getRandomIndex(mantrasList)];
+    makeHidden(meditationImage);
+    makeVisible(messageParagraph);
+    makeHidden(messageForm);
+    messageParagraph.innerText = `${message}`;
+    // meditationContainer.innerHTML = `
+    // <p>${message}</p>`
+  }
+  if (affirmationChecked.checked) {
+    message = affirmationsList[getRandomIndex(affirmationsList)];
+    makeHidden(meditationImage);
+    makeVisible(messageParagraph);
+    makeHidden(messageForm);
+    messageParagraph.innerText = `${message}`;
+  }
+   if (!mantraChecked.checked && !affirmationChecked.checked) {
+    alert("Please pick a message type!");
+  }
+}
+
+function clearMessage() {
+  if (meditationImage.classList.contains('hidden')) {
+    makeVisible(meditationImage);
+    makeHidden(messageForm);
+    makeHidden(messageParagraph);
+  }
+}
+
+function seeMessageForm() {
+  makeHidden(meditationImage);
+  makeVisible(messageForm);
+  makeHidden(messageParagraph);
+}
+
+function addYourMessage() {
+  var submitButton = document.querySelector('#submit');
+  var userMessage = document.querySelector('#user-input1');
+
+  if (affirmationChecked.checked && userMessage.value != '') {
     affirmationsList.push(userMessage.value);
-    mantrasListTitle.innerHTML = '';
-    affirmationsListTitle.innerHTML = '';
-    addMantrasList();
-    addAffirmationsList();
+    console.log(affirmationsList)
   }
-  if (mantraChecked2.checked && userMessage.value != '') {
+  if (mantraChecked.checked && userMessage.value != '') {
     mantrasList.push(userMessage.value);
-    mantrasListTitle.innerHTML = '';
-    affirmationsListTitle.innerHTML = '';
-    addMantrasList();
-    addAffirmationsList();
+    console.log(mantrasList)
   }
-  if (!mantraChecked2.checked && !affirmation2.checked) {
+  if (!mantraChecked.checked && !affirmationChecked.checked) {
     alert("Please pick a message type before adding your message!");
   }
   if (userMessage.value === '') {
@@ -132,20 +146,17 @@ function returnHome() {
 
 function removeSpecificMessage() {
   for (var i = 0; i < affirmationsList.length; i++) {
-    if (userMessage.value === affirmationsList[i] ){
+    if (messageToRemove.value === affirmationsList[i] ){
       affirmationsList.splice(i,1);
     }
   }
   for (var i = 0; i < mantrasList.length; i++) {
-    if (userMessage.value === mantrasList[i]) {
+    if (messageToRemove.value === mantrasList[i]) {
       mantrasList.splice(i,1);
     }
   }
-  mantrasListTitle.innerHTML = '';
-  affirmationsListTitle.innerHTML = '';
-  addMantrasList();
-  addAffirmationsList();
-  userMessage.value = '';
+  resetPage();
+  messageToRemove.value = '';
 }
 
 function removeLastMessage() {
@@ -156,12 +167,9 @@ function removeLastMessage() {
     mantrasList.splice(mantrasList.length-1, 1);
   }
   if (!mantraChecked2.checked && !affirmationChecked2.checked) {
-    alert("Please choose which list you would like a message removed from!")
+    alert("Please choose which list you would like a message removed from!");
   }
-  mantrasListTitle.innerHTML = '';
-  affirmationsListTitle.innerHTML = '';
-  addMantrasList();
-  addAffirmationsList();
+  resetPage();
 }
 
 function getRandomIndex(array) {
