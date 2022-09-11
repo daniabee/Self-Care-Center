@@ -5,27 +5,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <title> Self Care Page </title>
   </head>
-  <body>
-    <div class= "page">
-      <h1 id= "self-care-center"> ✨ Self Care Center ✨ </h1>
-      <h3 id= "which-type-of-message"> Which type of message? </h3>
-      <section>
-        <div class= "radio-buttons-container">
-          <div class = "inputs">
-            <input type="radio" id="affirmation" name="message-type" value="affirmation">
-            <label for="affirmation">affirmation</label>
-            <input type="radio" id="mantra" name="message-type" value="mantra">
-            <label for="mantra">mantra</label>
-          </div>
-          <button id = "recieve-message-button"> Recieve Message </button>
+  <section id= "message-view" class = "hidden">
+    <body>
+    <div class= "message-page">
+      <div id = "input-section">
+        <h2 id= "selftalk"> How's your self talk today? </h2>
+        <button id= "home-button"> Home Page </button>
+        <div id = "user-options" class= "inputs">
+          <input type="radio" id="affirmation2" name="message-type" value="affirmation">
+          <label for="affirmation2">affirmation</label>
+          <input type="radio" id="mantra2" name="message-type" value="mantra">
+          <label for="mantra2">mantra</label>
         </div>
-      </section>
-      <div id= "meditate-container">
-        <img id= "svg" src = "meditate.svg" alt="My Happy SVG"/>
+        <input id= "user-input2" type="text"></input>
+        <div>
+          <button id="addMessage-button"> Add Message </button>
+          <button id= "removeMessage"> Remove Message </button>
+        </div>
+        <p id= "instructions"> Copy and past messages you want removed and hit the 'Remove Message' button or double click it to remove the last message on the selected list! </p>
       </div>
-      <button id= "clear-button"> Clear Message </button>
-    <script type="text/javascript" src="main.js"></script>
-    <script type="text/javascript" src="data.js"></script>
-  </div>
-  </body>
+      <div class = "list">
+        <h3 class= "list-titles"> Affirmations: </h3>
+        <ol id= "affirmations-list"> Affirmations : </ul>
+      </div>
+      <div class= "list">
+      <h3 class= "list-titles"> Mantras: </h3>
+      <ol id= "mantras-list"> Mantras : </ul>
+      </div>
+    </div>
+    </body>
+  </section>
+  <section id="main-page-view">
+    <body>
+      <div class= "page">
+        <h1 id= "self-care-center"> ✨ Self Care Center ✨ </h1>
+        <h3 id= "which-type-of-message"> Which type of message? </h3>
+        <section>
+          <div class= "radio-buttons-container">
+            <div class = "inputs">
+              <input type="radio" id="affirmation" name="message-type" value="affirmation">
+              <label for="affirmation">affirmation</label>
+              <input type="radio" id="mantra" name="message-type" value="mantra">
+              <label for="mantra">mantra</label>
+            </div>
+            <button id = "recieve-message-button"> Recieve Message </button>
+          </div>
+        </section>
+        <div id= "meditate-container">
+          <p class= "hidden" id="message"> </p>
+          <img class= "fade" id= "svg" src = "meditate.svg" alt="My Happy SVG"/>
+          <div class = "inputs-main fade hidden">
+            <input id= "user-input1" type="text"></input>
+            <button id= "submit"> Submit </button>
+          </div>
+        </div>
+        <div>
+          <button id= "all-messages"> View All Messages </button>
+          <button id="add-message-here"> Add Message </button>
+          <button id= "clear-button"> Clear Message </button>
+        </div>
+      <script type="text/javascript" src="main.js"></script>
+      <script type="text/javascript" src="data.js"></script>
+    </div>
+    </body>
+  </section>
 </html>

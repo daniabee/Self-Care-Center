@@ -1,12 +1,3 @@
-/* font-family: 'Quicksand', sans-serif;
-COLORS
-light-yellow - #f7e4bf;
-light-blue - #78a7c6;
-dark-blue - #134d71;
-white - #ffffff;
-black - #000000;
-*/
-
 html {
     height: 100%;
     background-size: cover;
@@ -28,10 +19,27 @@ body {
   margin-bottom: 0;
 }
 
+.message-page {
+  display:flex;
+  margin-right: 5%;
+  margin-bottom: 10%;
+}
+
 #self-care-center {
   margin-top: 10px;
   margin-bottom: 60px;
   margin-left: 15px;
+}
+
+#all-messages-title {
+  margin-left: 5%;
+}
+
+
+#selftalk {
+  font-size: 50pt;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 #which-type-of-message {
@@ -46,6 +54,20 @@ body {
   height: 100px;
   width: 500px;
   display: inline-block;
+  margin-bottom: 90px;
+}
+
+#user-options {
+  width: 300px;
+  hight: 50px;
+
+}
+
+.inputs-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .inputs {
@@ -56,20 +78,24 @@ body {
   margin-left: 75px;
   margin-right: 75px;
   margin-top: 25px;
+  font-style: italic;
 }
 
 label {
-  margin-left: -125px;
+  margin-left: -120px;
   font-size: 12pt;
 }
 
-#recieve-message-button {
+button {
   background-color: #134d71;
   border: none;
   height: 25px;
   width: 150px;
   border-radius: 2pt;
   color: white;
+}
+
+#recieve-message-button {
   margin-top: 10px;
   margin-left: 175px;
 }
@@ -77,11 +103,18 @@ label {
 #meditate-container {
   background-color: white;
   border-radius: 6pt;
-  margin-top: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   height: 150px;
   width: 800px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+#input-section{
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -90,8 +123,28 @@ label {
   width: 75px;
 }
 
+.list-titles {
+  margin-bottom: 0px;
+}
+
+.list {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+ul {
+  font-style: italic;
+  margin-top: 1px;
+}
+
+li {
+  font-style:normal;
+}
+
 .fade {
-  animation: fade 5s;
+  animation: fade 4s;
 }
 
   @keyframes fade {
@@ -110,7 +163,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: pulse 5s infinite;
+  color:black;
+  animation: pulse 4s;
+}
+
+#instructions {
+  font-size: 12pt;
+  margin: 50px;
 }
 
   @keyframes pulse {
@@ -123,16 +182,44 @@ p {
   }
 
 #clear-button {
-  background-color: #134d71;
-  border: none;
-  height: 25px;
-  width: 150px;
-  border-radius: 2pt;
-  color: white;
   margin-top: 10px;
 }
 
+#yourMessage {
+  margin-top: 15%;
+}
+
+#user-input1 {
+  height: 80px;
+  width: 760px;
+  border: none;
+  border-radius: 4pt;
+  background-color: #e5e5e5;
+  margin-bottom: 15px;
+  font-size: 18pt;
+  text-align: center;
+}
+
+#user-input2 {
+  height: 40px;
+  width: 450px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 12pt;
+  text-align: center;
+  border-radius: 4pt;
+}
+
+.inputs-main {
+  display: flex;
+  flex-direction: column;
+}
+
+#home-button {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
 .hidden {
-  /* display: none; */
-  visibility: hidden;
+  display: none;
 }

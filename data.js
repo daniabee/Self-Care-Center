@@ -1,4 +1,4 @@
-var affirmations =[
+var affirmationsList =[
 'I forgive myself and set myself free.',
 'I believe I can be all that I want to be.',
 'I am in the process of becoming the best version of myself.',
@@ -13,7 +13,7 @@ var affirmations =[
 'I honor my body by trusting the signals that it sends me.'
 ];
 
-var mantras = [
+var mantrasList = [
 'Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.',
 'Don’t let yesterday take up too much of today.',
 'Every day is a second chance.',
