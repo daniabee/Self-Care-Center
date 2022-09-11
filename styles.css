@@ -28,17 +28,14 @@ body {
   margin-bottom: 0;
 }
 
-h1 {
+#self-care-center {
   margin-top: 10px;
   margin-bottom: 60px;
+  margin-left: 15px;
 }
 
 #which-type-of-message {
   margin-bottom: 10px;
-}
-
-section {
-  margin-top: 10px;
 }
 
 .radio-buttons-container {
@@ -63,6 +60,7 @@ section {
 
 label {
   margin-left: -125px;
+  font-size: 12pt;
 }
 
 #recieve-message-button {
@@ -85,4 +83,56 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#svg {
+  hight: 75px;
+  width: 75px;
+}
+
+.fade {
+  animation: fade 5s;
+}
+
+  @keyframes fade {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+
+p {
+  padding: 10px;
+  text-align: center;
+  font-size: 18pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pulse 5s infinite;
+}
+
+  @keyframes pulse {
+    0% {
+      color: white;
+    }
+    100% {
+      color: black;
+    }
+  }
+
+#clear-button {
+  background-color: #134d71;
+  border: none;
+  height: 25px;
+  width: 150px;
+  border-radius: 2pt;
+  color: white;
+  margin-top: 10px;
+}
+
+.hidden {
+  /* display: none; */
+  visibility: hidden;
 }
