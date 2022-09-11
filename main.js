@@ -12,6 +12,7 @@ var homeButton = document.querySelector('#home-button');
 var removeMessageButton = document.querySelector('#removeMessage');
 var addMessageMainPageButton = document.querySelector('#add-message-here');
 var submitButton = document.querySelector('#submit');
+var addMessageSecondButton = document.querySelector('#addMessage-button');
 
 //main page container and logo
 var meditationImage = document.querySelector('#svg');
@@ -29,8 +30,7 @@ var mantraChecked = document.getElementById('mantra');
 var affirmationChecked2 = document.getElementById('affirmation2');
 var mantraChecked2 = document.getElementById('mantra2');
 var userMessage = document.querySelector('#user-input1');
-var messageToRemove = document.querySelector('#user-input2');
-
+var userInput = document.querySelector('#user-input2');
 
 //Event listeners
 recieveMessageButton.addEventListener('click', giveRandomMessage);
@@ -41,6 +41,7 @@ removeMessageButton.addEventListener('click',removeSpecificMessage);
 removeMessageButton.addEventListener('dblclick', removeLastMessage);
 addMessageMainPageButton.addEventListener('click', seeMessageForm);
 submitButton.addEventListener('click', addYourMessage);
+addMessageSecondButton.addEventListener('click', secondPageAddMessage);
 
 //functions
 function makeHidden(hide) {
@@ -55,11 +56,17 @@ function fade(fadeElement) {
   fadeElement.classList.add('fade');
 }
 
-function resetPage()  {
+function resetPage() {
   mantrasListTitle.innerHTML = '';
   affirmationsListTitle.innerHTML = '';
   addMantrasList();
   addAffirmationsList();
+}
+
+function resetForm() {
+  makeHidden(messageForm);
+  makeVisible(messageParagraph);
+  userMessage.value = '';
 }
 
 function addAffirmationsList() {
@@ -88,8 +95,6 @@ function giveRandomMessage() {
     makeVisible(messageParagraph);
     makeHidden(messageForm);
     messageParagraph.innerText = `${message}`;
-    // meditationContainer.innerHTML = `
-    // <p>${message}</p>`
   }
   if (affirmationChecked.checked) {
     message = affirmationsList[getRandomIndex(affirmationsList)];
@@ -118,45 +123,49 @@ function seeMessageForm() {
 }
 
 function addYourMessage() {
-  var submitButton = document.querySelector('#submit');
   var userMessage = document.querySelector('#user-input1');
 
   if (affirmationChecked.checked && userMessage.value != '') {
     affirmationsList.push(userMessage.value);
-    console.log(affirmationsList)
+    messageParagraph.innerText = `${userMessage.value}`;
+    resetForm();
   }
   if (mantraChecked.checked && userMessage.value != '') {
     mantrasList.push(userMessage.value);
-    console.log(mantrasList)
+    messageParagraph.innerText = `${userMessage.value}`;
+    resetForm();
   }
   if (!mantraChecked.checked && !affirmationChecked.checked) {
     alert("Please pick a message type before adding your message!");
   }
-  if (userMessage.value === '') {
-    alert("Please write a message!")
-  }
-  userMessage.value = '';
 }
 
-function returnHome() {
-  makeVisible(mainPage);
-  makeHidden(messageListView);
-  fade(mainPage);
+function secondPageAddMessage() {
+  if (affirmationChecked2.checked && userInput.value != '') {
+    affirmationsList.push(userInput.value);
+  }
+  if (mantraChecked2.checked && userInput.value != '') {
+    mantrasList.push(userInput.value);
+  }
+  if (!mantraChecked2.checked && !affirmationChecked2.checked) {
+    alert("Please pick a message type before adding your message!");
+  }
+  resetPage();
 }
 
 function removeSpecificMessage() {
   for (var i = 0; i < affirmationsList.length; i++) {
-    if (messageToRemove.value === affirmationsList[i] ){
+    if (userInput.value === affirmationsList[i] ){
       affirmationsList.splice(i,1);
     }
   }
   for (var i = 0; i < mantrasList.length; i++) {
-    if (messageToRemove.value === mantrasList[i]) {
+    if (userInput.value === mantrasList[i]) {
       mantrasList.splice(i,1);
     }
   }
   resetPage();
-  messageToRemove.value = '';
+  userInput.value = '';
 }
 
 function removeLastMessage() {
@@ -170,6 +179,12 @@ function removeLastMessage() {
     alert("Please choose which list you would like a message removed from!");
   }
   resetPage();
+}
+
+function returnHome() {
+  makeVisible(mainPage);
+  makeHidden(messageListView);
+  fade(mainPage);
 }
 
 function getRandomIndex(array) {

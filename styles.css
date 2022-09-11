@@ -191,8 +191,10 @@ p {
 
 #user-input1 {
   height: 80px;
-  width: 720px;
+  width: 760px;
   border: none;
+  border-radius: 4pt;
+  background-color: #e5e5e5;
   margin-bottom: 15px;
   font-size: 18pt;
   text-align: center;
