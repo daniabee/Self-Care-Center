@@ -10,8 +10,7 @@ A person has to run git clone on their terminal and paste in the SHH link,
 Then open index.html to see the application.
 
 ### Preview of App:
-
-[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+<img width="1440" alt="Screenshot 2023-07-27 at 9 54 58 AM" src="https://github.com/daniabee/Self-Care-Center/assets/108088961/929a5e36-549f-4258-a667-6064b3419503">
 <img width="1406" alt="Screen Shot 2022-09-11 at 2 09 22 PM" src="https://user-images.githubusercontent.com/108088961/189547020-8d9233a8-1027-47f0-990c-7af3708a6837.png">
 
 ### Context:
